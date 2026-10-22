@@ -1,0 +1,23 @@
+{
+  "id": "kleleatoms",
+  "name": "KleleAtoms",
+  "love": "11",
+  "source": {
+    "github": "Nightwolf-47/KleleAtoms",
+    "commit": "9d49803f7d02822722eac2cf13f393d3de478579",
+    "dir": "."
+  },
+  "license": "MIT",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "puzzle",
+    "strategy"
+  ],
+  "controls": "cursor: d-pad, A click",
+  "tested": {
+    "qemu": "runs",
+    "mini-plus": "60 fps (0.3.0)"
+  },
+  "notes": "Played with love-mini's cursor: the d-pad moves it, A clicks."
+}

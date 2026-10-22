@@ -1,0 +1,45 @@
+# Builds the games (tools/build.py) and publishes them as a release of this repository:
+# one zip per game, its picture, and manifest.json, which Port Store reads from the
+# latest release (its recipes/sources/love-mini-games.json). On changes to the games or
+# the build, and by hand.
+name: catalog
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["games/**", "tools/**", ".github/workflows/catalog.yml"]
+
+permissions: {}
+
+concurrency:
+  group: catalog
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tag of this build
+        id: tag
+        run: echo "tag=games-$(date -u +%Y%m%d)-${{ github.run_number }}" >> "$GITHUB_OUTPUT"
+      - name: Build the games
+        run: >
+          python3 -I tools/build.py --out dist
+          --base "https://github.com/${{ github.repository }}/releases/download/${{ steps.tag.outputs.tag }}"
+      - name: COMPATIBILITY.md is the games' own
+        run: git diff --exit-code COMPATIBILITY.md || { echo "run tools/build.py and commit COMPATIBILITY.md"; exit 1; }
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >
+          gh release create "${{ steps.tag.outputs.tag }}" dist/*
+          --title "Games ${{ steps.tag.outputs.tag }}"
+          --notes "The love-mini games catalog: one zip per game (laid out from the SD card's root), manifest.json for Port Store. See COMPATIBILITY.md."
+          --latest

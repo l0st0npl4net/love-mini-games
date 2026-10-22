@@ -1,0 +1,32 @@
+{
+  "id": "balatro",
+  "name": "Balatro",
+  "love": "11.5",
+  "owned": {
+    "files": [
+      "Balatro.exe",
+      "Balatro.love"
+    ],
+    "what": "Balatro.exe (or Balatro.love) from your copy of Balatro",
+    "hint": "Steam: Library > Balatro > Manage > Browse local files, then Balatro.exe (macOS: Balatro.love, inside Balatro.app/Contents/Resources). Copy it into Roms/PORTS/Games/love-mini/games/balatro/, or into App/PortStore/import/: Port Store moves it (also from Roms/PORTS/Games/Balatro/, where its earlier Balatro port kept it).",
+    "store": "https://store.steampowered.com/app/2379780/Balatro/",
+    "search": [
+      "Roms/PORTS/Games/Balatro"
+    ]
+  },
+  "license": "Commercial (LocalThunk, Playstack): the game is not included. This wrapper: MIT; PortMaster's Balatro patches: MIT; Nunito: SIL OFL 1.1",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "puzzle",
+    "strategy"
+  ],
+  "controls": "gamepad: d-pad and A to pick cards, as the game's own controller support",
+  "tested": {},
+  "notes": "Not yet tried on love-mini: its shaders (card editions, the swirling background, CRT) are left out, so it looks flatter than on a PC.",
+  "porter": [
+    "love-mini-games",
+    "PortMaster (patches)"
+  ],
+  "wrapper": "wrapper"
+}

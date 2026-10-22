@@ -1,0 +1,22 @@
+{
+  "id": "curse",
+  "name": "Curse of the Arrow",
+  "love": "11",
+  "source": {
+    "github": "egordorichev/CurseOfTheArrow",
+    "commit": "5b5c65ee2b6353324cb262422a9d2d7506911f5f",
+    "dir": "."
+  },
+  "license": "GPL-3.0 (code), CC BY-NC-SA 4.0 (assets)",
+  "redistribute": false,
+  "status": "playable",
+  "categories": [
+    "platform"
+  ],
+  "controls": "B jump, A shoot, d-pad",
+  "tested": {
+    "qemu": "runs",
+    "mini-plus": "60 fps (0.2.2)"
+  },
+  "notes": "Not shared from here: its pictures and sounds are for non-commercial use only (CC BY-NC-SA), so the game is not open source."
+}

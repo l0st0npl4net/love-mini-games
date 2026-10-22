@@ -1,0 +1,24 @@
+{
+  "id": "monkune",
+  "name": "Monkune",
+  "love": "11",
+  "source": {
+    "github": "JadedCtrl/Monkune",
+    "commit": "16c49ac85ac7abb23ad15226cfe5b86aedc426f7",
+    "dir": "."
+  },
+  "license": "GPL-3.0 (code), free culture licenses per asset (art/*.txt: CC BY, CC0, public domain)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "puzzle",
+    "platform"
+  ],
+  "controls": "d-pad, A, Start",
+  "tested": {
+    "qemu": "runs",
+    "mini-plus": "60 fps (0.2.1)"
+  },
+  "notes": "",
+  "pack": "folder"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "lovechess",
+  "name": "LOVEchess",
+  "love": "11",
+  "source": {
+    "github": "badduck32/LOVEchess",
+    "commit": "c2964b62ce6c0d006ee894861ba16dd3e5a46691",
+    "dir": "."
+  },
+  "license": "MIT (code); chess pieces apparently Wikimedia Commons' Chess Pieces Sprite (CC BY-SA 3.0)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "strategy"
+  ],
+  "controls": "cursor: d-pad, A click",
+  "tested": {
+    "qemu": "runs",
+    "mini-plus": "60 fps (0.3.0)"
+  },
+  "notes": "Played with love-mini's cursor: the d-pad moves it, A clicks.",
+  "attribution": "The chess pieces (images/chess_pieces.png) appear to be \"Chess Pieces Sprite\" by jurgenwesterhof (adapted from work of Cburnett), Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Chess_Pieces_Sprite.svg, CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/). The game's repository does not say where they come from."
+}

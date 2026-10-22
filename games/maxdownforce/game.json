@@ -1,0 +1,22 @@
+{
+  "id": "maxdownforce",
+  "name": "Max Downforce",
+  "love": "11",
+  "source": {
+    "github": "Foppygames/max-downforce",
+    "commit": "29c73b4602ca4a06313c5e2da622854962925712",
+    "dir": "."
+  },
+  "license": "GPL-3.0 (code), CC BY 4.0 (music by Kevin MacLeod, LICENSE-MUSIC)",
+  "redistribute": false,
+  "status": "playable",
+  "categories": [
+    "racing"
+  ],
+  "controls": "A accelerate, d-pad steer, Start",
+  "tested": {
+    "qemu": "runs",
+    "mini-plus": "18 ms a frame (0.2.1)"
+  },
+  "notes": "Not shared from here: its font (RetroVille NC by Jayvee D. Enaguas) says all rights reserved; the rest is GPL-3.0 and CC BY 4.0 music."
+}

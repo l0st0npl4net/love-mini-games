@@ -1,0 +1,22 @@
+{
+  "id": "gravitywars",
+  "name": "Gravity Wars",
+  "love": "11",
+  "source": {
+    "github": "whyboris/Gravity-Wars",
+    "commit": "e66964fc33a37cc8d2a824ec4fad255d38c0d54f",
+    "dir": "."
+  },
+  "license": "MIT",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "strategy"
+  ],
+  "controls": "d-pad aim, A fire",
+  "tested": {
+    "qemu": "runs",
+    "mini-plus": "20 ms a frame (0.2.0)"
+  },
+  "notes": ""
+}

@@ -1,0 +1,22 @@
+{
+  "id": "tuxswimmer",
+  "name": "Tux Swimmer",
+  "love": "11",
+  "source": {
+    "github": "nicolas-sabbatini/tux-swimmer",
+    "commit": "d90c5bdd0484475abaf4171b8ed11bf4df247d06",
+    "dir": "src"
+  },
+  "license": "MIT",
+  "redistribute": false,
+  "status": "playable",
+  "categories": [
+    "action"
+  ],
+  "controls": "A swim, Start",
+  "tested": {
+    "qemu": "runs",
+    "mini-plus": "20 ms a frame (0.2.0)"
+  },
+  "notes": "Not shared from here: its font (FFF Forward by Fonts For Flash) may not be redistributed; the code is MIT."
+}

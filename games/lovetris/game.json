@@ -1,0 +1,22 @@
+{
+  "id": "lovetris",
+  "name": "Lovetris",
+  "love": "11",
+  "source": {
+    "github": "sharkwouter/lovetris",
+    "commit": "57981be6fc6e76933ff50c9f8ddb34477aea592a",
+    "dir": "src"
+  },
+  "license": "MIT-style (code, Classic by rxi), Bitstream Vera / DejaVu (fonts)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "puzzle"
+  ],
+  "controls": "gamepad",
+  "tested": {
+    "qemu": "runs",
+    "mini-plus": "60 fps (0.2.0)"
+  },
+  "notes": ""
+}

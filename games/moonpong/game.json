@@ -1,0 +1,22 @@
+{
+  "id": "moonpong",
+  "name": "Moon Pong",
+  "love": "11",
+  "source": {
+    "github": "omrawaley/Moon-Pong",
+    "commit": "ea35ba83cb68dc543d7c362d12e3ff74837f6083",
+    "dir": "MoonPong"
+  },
+  "license": "Apache-2.0",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "sports"
+  ],
+  "controls": "d-pad up and down",
+  "tested": {
+    "qemu": "runs",
+    "mini-plus": "runs (0.2.0)"
+  },
+  "notes": ""
+}
