@@ -32,6 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 GAMES = ROOT / "games"
 RUNTIME = "love-mini"
+FOLDER = "LÖVE"
 DATE = (1980, 1, 1, 0, 0, 0)
 SKIP_DIRS = {".git", ".github", ".vscode", ".idea"}
 SKIP_EXT = (".dll", ".dylib", ".exe", ".zip", ".love", ".so")
@@ -302,6 +303,8 @@ def main():
             "notes": " ".join(x for x in (f"Controls: {g['controls']}." if g.get("controls") else "",
                                           f"License: {g['license']}.", g.get("notes", "")) if x),
             "requires": [RUNTIME],
+            # Port Store 1.3.1+: in MiyooPorts, love-mini's games are together
+            "folder": FOLDER,
         }
         if "owned" in g:
             o = g["owned"]

@@ -84,7 +84,8 @@ Roms/PORTS/Imgs/<Name>.png
 ```
 
 `manifest.json` is in the format of [Mixtape](https://github.com/snyderman3000/mixtape)'s
-catalogs, each game with `"requires": ["love-mini"]`. Zips are made the same way every time,
+catalogs, each game with `"requires": ["love-mini"]` and `"folder": "LÖVE"` (in MiyooPorts,
+Port Store 1.3.1 puts love-mini's games in that folder). Zips are made the same way every time,
 so a game's version (`<commit>-<zip checksum>`) changes only when the game or what is added to
 it does.
 
