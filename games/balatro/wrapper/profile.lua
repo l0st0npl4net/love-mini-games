@@ -48,4 +48,6 @@ return {
   -- the saves of the Balatro port love-mini takes over from (Producdevity's)
   saves_from = "/mnt/SDCARD/Saves/CurrentProfile/saves/Balatro",
   texture_budget_mb = 40,
+  -- the CPU at 1.5 GHz (1.2 by default), as Producdevity's Balatro port for the Mini runs it
+  cpu_mhz = 1500,
 }
