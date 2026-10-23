@@ -1,0 +1,26 @@
+{
+  "id": "cryptolich",
+  "name": "Tower of the Cryptolich",
+  "love": "11",
+  "source": {
+    "github": "dbisdorf/cryptolich",
+    "commit": "adddf5c36a93ae7e2cd49c90689f026dcfa19f54",
+    "dir": "."
+  },
+  "license": "MIT (code, pictures, sounds), CC BY-SA 4.0 (font Mx437 IBM BIOS by VileR)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "shooter",
+    "action"
+  ],
+  "controls": "d-pad, A shoot, B aim, Start",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "By Dan Bisdorf.",
+  "skip": [
+    "build.sh",
+    "crypto-icon.ico"
+  ]
+}

@@ -89,11 +89,27 @@ Port Store 1.3.1 puts love-mini's games in that folder). Zips are made the same 
 so a game's version (`<commit>-<zip checksum>`) changes only when the game or what is added to
 it does.
 
+## Checking
+
+```sh
+tools/check.py --kit love-mini            # every game that is shared
+tools/check.py --kit love-mini lovetris   # some games only
+```
+
+runs each game for 360 frames under qemu-user, with its profile and a few presses of Start, A
+and the d-pad, in love-mini's kit for PCs (`love-mini-<version>-qemu.tar.gz` of its releases,
+unpacked: `--kit` is its `love-mini` folder). A game passes when it runs all its frames
+without an error. `check/` gets each run (frames, `report.json`, `log.txt`), `sheet.png`
+with each game's last frame, and `summary.md`. Needs `qemu-arm` and an armhf glibc
+(Debian's and Ubuntu's `qemu-user` and `libc6-armhf-cross`).
+
 ## Publishing
 
-`.github/workflows/catalog.yml` builds the games on every change to `games/` or `tools/` and
-publishes them as a release (`games-<date>-<run>`, marked latest). Port Store's catalog reads
-`releases/latest/download/manifest.json` (its `recipes/sources/love-mini-games.json`).
+`.github/workflows/catalog.yml` checks the games (above, with the kit of love-mini's latest
+release), then builds them on every change to `games/` or `tools/` and publishes them as a
+release (`games-<date>-<run>`, marked latest). Port Store's catalog reads
+`releases/latest/download/manifest.json` (its `recipes/sources/love-mini-games.json`). A pull
+request is only checked: the check's summary and sheet are the run's artifacts.
 
 ## License
 

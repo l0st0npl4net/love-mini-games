@@ -1,0 +1,24 @@
+{
+  "id": "boxsmasher",
+  "name": "Box Smasher",
+  "love": "11",
+  "source": {
+    "github": "rollerozxa/boxsmasher",
+    "commit": "671f60017d8dbe261bdd430d3ee42f6f72b2c698",
+    "dir": "."
+  },
+  "license": "GPL-3.0-or-later (code, pictures), CC0 (sounds), OFL 1.1 (font)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "puzzle"
+  ],
+  "controls": "cursor: d-pad, hold A and let go to throw",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "",
+  "skip": [
+    "packaging"
+  ]
+}

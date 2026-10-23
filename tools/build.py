@@ -36,7 +36,7 @@ FOLDER = "LÖVE"
 DATE = (1980, 1, 1, 0, 0, 0)
 SKIP_DIRS = {".git", ".github", ".vscode", ".idea"}
 SKIP_EXT = (".dll", ".dylib", ".exe", ".zip", ".love", ".so")
-LICENSES = ("LICENSE", "LICENSE.md", "LICENSE.txt", "LICENCE.txt", "COPYING", "COPYING.txt")
+LICENSES = ("LICENSE", "LICENSE.md", "LICENSE.txt", "LICENCE.txt", "COPYING", "COPYING.txt", "license.txt")
 # OnionOS's Ports entry: launch_standalone.sh runs love-mini's run.sh with the game's id
 PORT = """#!/bin/sh
 # {name} on love-mini (LÖVE 11.5 for the Miyoo Mini)
@@ -123,9 +123,11 @@ def check(g, path):
             p.append("a game the player owns has no `source`")
     else:
         src = g.get("source", {})
-        if not (isinstance(src, dict) and isinstance(src.get("github"), str) and isinstance(src.get("commit"), str)
-                and len(src["commit"]) == 40):
-            p.append("`source` has `github` (owner/repo) and `commit` (a full hash)")
+        if not (isinstance(src, dict) and (isinstance(src.get("github"), str) or isinstance(src.get("git"), str))
+                and isinstance(src.get("commit"), str) and len(src["commit"]) == 40):
+            p.append("`source` has `github` (owner/repo) or `git` (a repository's address) and `commit` (a full hash)")
+        if not isinstance(src.get("with", []), list):
+            p.append("`source.with` is a list of the repository's paths")
     if "wrapper" in g and not (path.parent / str(g["wrapper"])).is_dir():
         p.append("`wrapper`: a folder next to game.json")
     if not isinstance(g.get("redistribute"), bool):
@@ -135,13 +137,21 @@ def check(g, path):
     return p
 
 
+def upstream(src):
+    """The source's web address: its GitHub repository's, or its `git` address."""
+    if "github" in src:
+        return f"https://github.com/{src['github']}"
+    return src["git"].removesuffix(".git")
+
+
 def fetch(src, cache):
     """The source at its commit, in the cache (a shallow fetch of that commit)."""
-    dest = cache / src["github"].replace("/", "__")
+    name = src["github"] if "github" in src else src["git"].split("://", 1)[-1].removesuffix(".git")
+    dest = cache / name.replace("/", "__")
     if not (dest / ".git").is_dir():
         dest.mkdir(parents=True, exist_ok=True)
         subprocess.run(["git", "-C", str(dest), "init", "-q"], check=True)
-        subprocess.run(["git", "-C", str(dest), "remote", "add", "origin", f"https://github.com/{src['github']}"],
+        subprocess.run(["git", "-C", str(dest), "remote", "add", "origin", src.get("git") or upstream(src)],
                        check=True)
     head = subprocess.run(["git", "-C", str(dest), "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
     if head != src["commit"]:
@@ -171,10 +181,10 @@ def add(z, name, data, mode=0o644):
     z.writestr(info, data, compresslevel=9)
 
 
-def love_of(top, skip):
+def love_of(files):
     buf = io.BytesIO()
     with zipfile.ZipFile(buf, "w") as z:
-        for rel, f in game_files(top, skip):
+        for rel, f in files:
             add(z, rel, f.read_bytes())
     return buf.getvalue()
 
@@ -225,10 +235,21 @@ def build_game(g, cache, out):
         raise ValueError(f"no main.lua in {g['source'].get('dir', '.')}")
     base = f"Roms/PORTS/Games/{RUNTIME}/games/{g['id']}/"
     members = []
+    files = list(game_files(top, g.get("skip", [])))
+    # `with`: the repository's own paths the game needs next to its main.lua (a game whose
+    # code is in src/ and its pictures in assets/, put together by its build)
+    for extra in g["source"].get("with", []):
+        p = repo / extra
+        if p.is_dir():
+            files += [(f"{extra}/{rel}", f) for rel, f in game_files(p, [])]
+        elif p.is_file():
+            files.append((extra, p))
+        else:
+            raise ValueError(f"`with`: no {extra} in the source")
     if g.get("pack") == "folder":
-        members += [(base + rel, f.read_bytes()) for rel, f in game_files(top, g.get("skip", []))]
+        members += [(base + rel, f.read_bytes()) for rel, f in files]
     else:
-        members.append((base + "game.love", love_of(top, g.get("skip", []))))
+        members.append((base + "game.love", love_of(files)))
     profile = g["_dir"] / "profile.lua"
     if profile.is_file():
         # next to a .love: games/<id>/profile.lua; a folder may have one of its own
@@ -263,7 +284,7 @@ def compatibility(games):
              "| Game | Shared | qemu | Mini Plus | Controls | License | Notes |", "|---|---|---|---|---|---|---|"]
     for g in sorted(games, key=lambda g: g["name"].lower()):
         t = g.get("tested", {})
-        link = g["owned"].get("store", "") if "owned" in g else f"https://github.com/{g['source']['github']}"
+        link = g["owned"].get("store", "") if "owned" in g else upstream(g["source"])
         lines.append(f"| [{g['name']}]({link}) | "
                      f"{'wrapper only (your copy)' if 'owned' in g else 'yes' if g['redistribute'] else 'no'} | {t.get('qemu', '—')} | "
                      f"{t.get('mini-plus', '—')} | {g.get('controls', '')} | {g['license']} | {g.get('notes', '')} |")
@@ -299,7 +320,7 @@ def main():
             "name": g["name"], "version": version, "url": f"{base}/{zpath.name}", "sha256": digest,
             "size": zpath.stat().st_size, "categories": g.get("categories", []), "status": g["status"],
             "assets": "owned" if "owned" in g else "free", "porter": g.get("porter", ["love-mini-games"]),
-            "upstream": g["owned"].get("store", "") if "owned" in g else f"https://github.com/{g['source']['github']}",
+            "upstream": g["owned"].get("store", "") if "owned" in g else upstream(g["source"]),
             "notes": " ".join(x for x in (f"Controls: {g['controls']}." if g.get("controls") else "",
                                           f"License: {g['license']}.", g.get("notes", "")) if x),
             "requires": [RUNTIME],

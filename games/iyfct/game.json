@@ -1,0 +1,21 @@
+{
+  "id": "iyfct",
+  "name": "In Your Face City Trains",
+  "love": "11",
+  "source": {
+    "github": "SimonLarsen/iyfct",
+    "commit": "ac4555d1f4af4c3755d058a34da126acb9fc58d2",
+    "dir": "."
+  },
+  "license": "GPL-3.0 (code), CC BY 3.0 (pictures, sounds; music \"The rb Sequence\" by Fighter X)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "arcade"
+  ],
+  "controls": "A jump, Start, Y restart, Select pause",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "By Simon Larsen."
+}

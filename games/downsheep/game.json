@@ -1,0 +1,32 @@
+{
+  "id": "downsheep",
+  "name": "Down Sheep",
+  "love": "11",
+  "source": {
+    "git": "https://gitlab.com/alexjgriffith/downsheep.git",
+    "commit": "2ecda4758d66f4e73a950d9f2e11f4a6e353d4ba",
+    "dir": "."
+  },
+  "license": "GPL-3.0 (code), CC BY 4.0 (pictures by Alexander Griffith; music Thunder Hoodie Beats), CC BY 3.0 (sounds: NenadSimic, Lamoot), OFL 1.1 (fonts Avara, Inconsolata)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "puzzle",
+    "platform"
+  ],
+  "controls": "d-pad, A jump, X switch sheep, Menu",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "Lisp Game Jam 2020, by Alexander Griffith (in Fennel).",
+  "skip": [
+    "appimage",
+    "buildtools",
+    "old-level-format",
+    "love-release.sh",
+    "export.sh",
+    "makefile"
+  ],
+  "pack": "folder",
+  "attribution": "Down Sheep by Alexander Griffith (https://alexjgriffith.itch.io/downsheep).\nPictures: Alexander Griffith, CC BY 4.0. Music: Thunder Hoodie Beats (Isolated), CC BY 4.0. Sounds: NenadSimic and Lamoot (OpenGameArt), CC BY 3.0.\nFonts: Avara and Inconsolata, SIL Open Font License 1.1."
+}

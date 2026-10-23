@@ -1,0 +1,21 @@
+{
+  "id": "snak",
+  "name": "SNAK'",
+  "love": "11",
+  "source": {
+    "github": "Keyslam/SNAK",
+    "commit": "007d122420e175797302248988ab09ebe62d735a",
+    "dir": "."
+  },
+  "license": "MIT (code, tiles), OFL 1.1 (font Press Start 2P)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "puzzle"
+  ],
+  "controls": "d-pad, A restart the level",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "Its blur, grain and vignette shaders are left out on the Mini."
+}

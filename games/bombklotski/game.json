@@ -1,0 +1,21 @@
+{
+  "id": "bombklotski",
+  "name": "Bomb Klotski",
+  "love": "11",
+  "source": {
+    "git": "https://codeberg.org/MossyGreySlope/Bomb-Klotski.git",
+    "commit": "b07dfedeaa2123cf572b0d2c46c9fbe15fcadeb1",
+    "dir": "game"
+  },
+  "license": "AGPL-3.0-or-later",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "puzzle"
+  ],
+  "controls": "cursor: d-pad, hold A to drag a block",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "LÖVE Jam 2025, by MossyGreySlope."
+}

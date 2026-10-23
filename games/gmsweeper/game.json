@@ -1,0 +1,21 @@
+{
+  "id": "gmsweeper",
+  "name": "GMSweeper",
+  "love": "11",
+  "source": {
+    "github": "GreffMASTER/GMSweeper",
+    "commit": "85c34d8b649435771fffd192f54a0223eefdbc32",
+    "dir": "."
+  },
+  "license": "MIT",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "puzzle"
+  ],
+  "controls": "cursor: d-pad, A open, B flag; Start new game",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": ""
+}

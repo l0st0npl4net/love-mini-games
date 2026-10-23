@@ -1,0 +1,26 @@
+{
+  "id": "superjumpdash",
+  "name": "Super Jump And Dash Man",
+  "love": "11",
+  "source": {
+    "github": "neguse/SuperJumpAndDashMan",
+    "commit": "0a3eed09655d1e262e9ab113c31d6cffb4404a9c",
+    "dir": "."
+  },
+  "license": "zlib (code, sounds)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "platform"
+  ],
+  "controls": "d-pad, A jump, B dash",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "LÖVE Jam 2019, by neguse.",
+  "skip": [
+    "Makefile",
+    "memo.txt",
+    "map.tmx"
+  ]
+}

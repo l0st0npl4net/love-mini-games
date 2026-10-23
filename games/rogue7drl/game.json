@@ -1,0 +1,24 @@
+{
+  "id": "rogue7drl",
+  "name": "The Return of the Rogue",
+  "love": "11",
+  "source": {
+    "github": "bastienleonard/7drl2022",
+    "commit": "305cbe6b6b27c70edafd46d471cd59ac4dcb7a69",
+    "dir": "src",
+    "with": [
+      "assets"
+    ]
+  },
+  "license": "GPL-3.0 (code), OFL 1.1 (font Source Code Pro)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "rpg"
+  ],
+  "controls": "d-pad, A act, X rest",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "A 7DRL 2022 roguelike in letters, by Bastien Léonard."
+}

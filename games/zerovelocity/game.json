@@ -1,0 +1,22 @@
+{
+  "id": "zerovelocity",
+  "name": "Zero Velocity",
+  "love": "11",
+  "source": {
+    "github": "theoratkin/zero-velocity",
+    "commit": "142c2b80017f3aa6a1cd50029ce38b0f988da5e0",
+    "dir": "game"
+  },
+  "license": "GPL-3.0-or-later (code), CC BY-SA 4.0 (pictures), CC BY 4.0 (music by Eric Skiff), CC0 (laser sound), OFL 1.1 (font Press Start 2P), MIT (moonshine, classic)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "shooter"
+  ],
+  "controls": "d-pad turn, A fire",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "Its glow, CRT and scanline shaders are left out on the Mini.",
+  "attribution": "Zero Velocity by Theodore Ratkin (https://github.com/theoratkin/zero-velocity).\nPictures: CC BY-SA 4.0. Music: Eric Skiff, CC BY 4.0. Laser sound: sharesynth, CC0. Font Press Start 2P: SIL Open Font License 1.1. moonshine, classic: MIT."
+}

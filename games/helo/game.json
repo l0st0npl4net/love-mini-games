@@ -1,0 +1,26 @@
+{
+  "id": "helo",
+  "name": "HELO",
+  "love": "11",
+  "source": {
+    "github": "paulpls/helo",
+    "commit": "1f60d7bc80a709af2159702e7b30652463e207da",
+    "dir": "."
+  },
+  "license": "GPL-3.0 (code and pictures, by paulpls)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "arcade"
+  ],
+  "controls": "A fly, Start again",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "By paulpls.",
+  "skip": [
+    "TODO.md",
+    "todo.py",
+    "assets/img/screenshot.png"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "granitecrash",
+  "name": "Granite Crash",
+  "love": "11",
+  "source": {
+    "github": "Varkalandar/granite_crash",
+    "commit": "faa6702550c72e1764b58b67d838a5dc7f8e10f8",
+    "dir": "."
+  },
+  "license": "GPL-3.0-or-later",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "puzzle",
+    "action"
+  ],
+  "controls": "d-pad",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "Alpha: 7 maps."
+}

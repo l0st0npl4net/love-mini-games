@@ -1,13 +1,16 @@
-# Builds the games (tools/build.py) and publishes them as a release of this repository:
-# one zip per game, its picture, and manifest.json, which Port Store reads from the
-# latest release (its recipes/sources/love-mini-games.json). On changes to the games or
-# the build, and by hand.
+# Checks the games on love-mini under qemu (tools/check.py, with love-mini's kit for PCs from
+# its latest release), then builds them (tools/build.py) and publishes them as a release of
+# this repository: one zip per game, its picture, and manifest.json, which Port Store reads
+# from the latest release (its recipes/sources/love-mini-games.json). On changes to the
+# games or the build, and by hand; a pull request is only checked.
 name: catalog
 
 on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths: ["games/**", "tools/**", ".github/workflows/catalog.yml"]
+  pull_request:
     paths: ["games/**", "tools/**", ".github/workflows/catalog.yml"]
 
 permissions: {}
@@ -17,7 +20,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: qemu and an armhf glibc
+        run: sudo apt-get update -q && sudo apt-get install -y -q qemu-user libc6-armhf-cross
+      - name: love-mini's kit for PCs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download -R l0st0npl4net/love-mini --pattern 'love-mini-*-qemu.tar.gz' --dir /tmp
+          mkdir -p /tmp/kit && tar -xzf /tmp/love-mini-*-qemu.tar.gz -C /tmp/kit
+      - name: Run the games
+        run: python3 -I tools/check.py --kit /tmp/kit/love-mini --out check
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: check
+          path: |
+            check/summary.md
+            check/sheet.png
+            check/*/log.txt
+            check/*/report.json
+
   release:
+    needs: check
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       contents: write

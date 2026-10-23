@@ -1,0 +1,26 @@
+{
+  "id": "neonphase",
+  "name": "NEON PHASE",
+  "love": "11",
+  "source": {
+    "github": "eevee/neon-phase",
+    "commit": "e86f7654b04e3e7b2f450ea6a99c84a0c96d23a9",
+    "dir": "."
+  },
+  "license": "ISC (code), CC BY-SA 4.0 (pictures, music, sounds, maps), CC0 (font m5x7 by Daniel Linssen)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "platform"
+  ],
+  "controls": "gamepad",
+  "tested": {
+    "qemu": "runs",
+    "mini-plus": "32 ms a frame (0.3.0)"
+  },
+  "notes": "By Eevee and GlitchedPuppet, set in GlitchedPuppet's Floraverse.",
+  "skip": [
+    "spec"
+  ],
+  "attribution": "NEON PHASE by Eevee and GlitchedPuppet (https://eevee.itch.io/neon-phase).\nCode: ISC (LICENSE.txt). Pictures, music, sounds and maps: Creative Commons Attribution-ShareAlike 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), packed unchanged.\nFont m5x7 by Daniel Linssen (https://managore.itch.io/m5x7): CC0 1.0."
+}

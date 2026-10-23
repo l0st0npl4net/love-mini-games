@@ -1,0 +1,24 @@
+{
+  "id": "sixcardgolf",
+  "name": "Six Card Golf",
+  "love": "11",
+  "source": {
+    "github": "CGagnier/six-card-golf",
+    "commit": "2af09692106e3eb2a8bbbac5c9999e05eea447e8",
+    "dir": "six-card-golf"
+  },
+  "license": "MIT",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "card"
+  ],
+  "controls": "d-pad, A take or flip, B close",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "Against the Mini.",
+  "skip": [
+    "test"
+  ]
+}

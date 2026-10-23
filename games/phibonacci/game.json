@@ -1,0 +1,21 @@
+{
+  "id": "phibonacci",
+  "name": "Phibonacci",
+  "love": "11",
+  "source": {
+    "github": "AlexanDDOS/Phibonacci",
+    "commit": "3c42801f2982a497bd0a6cc4c7cf3ef9564b9986",
+    "dir": "."
+  },
+  "license": "MIT (code), OFL 1.1 (font Lato)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "puzzle"
+  ],
+  "controls": "d-pad; Select: the cursor for Restart and Undo",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "2048 with Fibonacci numbers."
+}

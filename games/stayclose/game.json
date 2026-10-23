@@ -1,0 +1,27 @@
+{
+  "id": "stayclose",
+  "name": "StayClose",
+  "love": "11",
+  "source": {
+    "github": "ThunderNL/StayClose",
+    "commit": "18dc0c163d8056179dbfc71a0b012217f0cdc6a0",
+    "dir": "."
+  },
+  "license": "MIT (code, pictures, music), CC BY 3.0 (font Boxy Bold by william.thompsonj)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "action"
+  ],
+  "controls": "gamepad: d-pad the red ship, A/B/X/Y the blue one, Start",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "LÖVE Jam 2023, by ThunderNL.",
+  "skip": [
+    "build",
+    "build.bat",
+    "makelove.toml"
+  ],
+  "attribution": "StayClose by ThunderNL (https://github.com/ThunderNL/StayClose), MIT.\nFont Boxy Bold by william.thompsonj (OpenGameArt): CC BY 3.0."
+}

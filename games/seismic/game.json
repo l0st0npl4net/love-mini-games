@@ -1,0 +1,24 @@
+{
+  "id": "seismic",
+  "name": "Seismic Afterburner",
+  "love": "11",
+  "source": {
+    "github": "rominou66/Love-Jam-2022-Seismic-Afterburner",
+    "commit": "dda312853cac59675de02ef1a44d0d57b15926b2",
+    "dir": "."
+  },
+  "license": "AGPL-3.0 (code, pictures), CC0 (music by SketchyLogic), CC BY 3.0 / 4.0 (sounds: dklon, KuraiWolf, Michel Baradari), OFL 1.1 (font Press Start 2P)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "shooter"
+  ],
+  "controls": "d-pad, A shoot, B afterburner, Start",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "LÖVE Jam 2022, by rominou66. Upright screen: small on the Mini.",
+  "skip": [
+    "makelove-build"
+  ]
+}

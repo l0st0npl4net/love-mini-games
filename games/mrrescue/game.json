@@ -1,0 +1,27 @@
+{
+  "id": "mrrescue",
+  "name": "Mr. Rescue",
+  "love": "11",
+  "source": {
+    "github": "SimonLarsen/mrrescue",
+    "commit": "a5be73c60acb8d1be506f7b5e48e784492ba96ce",
+    "dir": "."
+  },
+  "license": "zlib (code), CC BY-SA 3.0 (pictures, music, sounds: Tangram Games), MIT (slam, AnAL; TSerial stand-in: this catalog's)",
+  "redistribute": true,
+  "status": "playable",
+  "categories": [
+    "action",
+    "arcade"
+  ],
+  "controls": "A jump, B shoot, X action, d-pad; Start and Menu in menus",
+  "tested": {
+    "qemu": "runs"
+  },
+  "notes": "By Simon Larsen and Tangram Games.",
+  "skip": [
+    "TSerial.lua",
+    "README.md"
+  ],
+  "wrapper": "wrapper"
+}
