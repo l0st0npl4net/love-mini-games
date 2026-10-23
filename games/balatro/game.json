@@ -22,8 +22,10 @@
     "strategy"
   ],
   "controls": "gamepad: d-pad and A to pick cards, as the game's own controller support",
-  "tested": {},
-  "notes": "Not yet tried on love-mini: its shaders (card editions, the swirling background, CRT) are left out, so it looks flatter than on a PC.",
+  "tested": {
+    "mini-plus": "runs, about 23 fps (love-mini 0.3.1, before its profile)"
+  },
+  "notes": "Its shaders (card editions, CRT) are left out, so it looks flatter than on a PC; its swirling background is a flat colour.",
   "porter": [
     "love-mini-games",
     "PortMaster (patches)"

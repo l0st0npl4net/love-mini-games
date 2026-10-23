@@ -15,6 +15,15 @@ for _, m in ipairs(modules) do requires[#requires + 1] = 'require "' .. m .. '"'
 
 return {
   screen = "fit",
+  -- Balatro plays with a gamepad (it shows its controller prompts and cursor) as long
+  -- as no keys come: the Mini's buttons are the gamepad only
+  keyboard = false,
+  -- its swirling backgrounds are drawn by these shaders on any sprite (the logo's):
+  -- without them, a flat background in their colour, not the sprite stretched
+  shaders = {
+    ["resources/shaders/background.fs"] = { effect = "flat", color = "colour_1" },
+    ["resources/shaders/splash.fs"] = { effect = "flat", color = "colour_1" },
+  },
   lua = "lua",
   env = {
     BALATRO_PM_PERF_OPTIMIZATIONS = "1",

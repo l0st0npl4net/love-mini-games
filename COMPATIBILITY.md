@@ -9,7 +9,7 @@ game that is not is listed for its results only.
 
 | Game | Shared | qemu | Mini Plus | Controls | License | Notes |
 |---|---|---|---|---|---|---|
-| [Balatro](https://store.steampowered.com/app/2379780/Balatro/) | wrapper only (your copy) | — | — | gamepad: d-pad and A to pick cards, as the game's own controller support | Commercial (LocalThunk, Playstack): the game is not included. This wrapper: MIT; PortMaster's Balatro patches: MIT; Nunito: SIL OFL 1.1 | Not yet tried on love-mini: its shaders (card editions, the swirling background, CRT) are left out, so it looks flatter than on a PC. |
+| [Balatro](https://store.steampowered.com/app/2379780/Balatro/) | wrapper only (your copy) | — | runs, about 23 fps (love-mini 0.3.1, before its profile) | gamepad: d-pad and A to pick cards, as the game's own controller support | Commercial (LocalThunk, Playstack): the game is not included. This wrapper: MIT; PortMaster's Balatro patches: MIT; Nunito: SIL OFL 1.1 | Its shaders (card editions, CRT) are left out, so it looks flatter than on a PC; its swirling background is a flat colour. |
 | [Curse of the Arrow](https://github.com/egordorichev/CurseOfTheArrow) | no | runs | 60 fps (0.2.2) | B jump, A shoot, d-pad | GPL-3.0 (code), CC BY-NC-SA 4.0 (assets) | Not shared from here: its pictures and sounds are for non-commercial use only (CC BY-NC-SA), so the game is not open source. |
 | [Flash Blip](https://github.com/plinkr/flash-blip) | yes | runs | 52 ms a frame (0.2.0, 8 shaders left out) | gamepad | MIT | Its glow, blur and CRT shaders are left out on the Mini. |
 | [Gravity Wars](https://github.com/whyboris/Gravity-Wars) | yes | runs | 20 ms a frame (0.2.0) | d-pad aim, A fire | MIT |  |
